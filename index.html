@@ -1,1 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gustavo Fuentes Aguilar | AMETEL</title>
+
+  <meta name="description"
+        content="Portfolio ejecutivo de Gustavo Fuentes Aguilar y trabajos estratégicos desarrollados sobre AMETEL: estrategia, gobernanza de inteligencia artificial y robótica aplicada.">
+
+  <style>
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7f9;
+      color: #14243b;
+      line-height: 1.65;
+    }
+
+    a { text-decoration: none; }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #08182e 0%, #17385e 100%);
+      color: white;
+      padding: 78px 24px 72px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: #d6aa25;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 54px;
+      line-height: 1.07;
+    }
+
+    .hero h2 {
+      margin: 18px 0 0;
+      font-size: 25px;
+      font-weight: 400;
+      color: #e2e8f0;
+    }
+
+    .hero p {
+      max-width: 860px;
+      margin: 27px 0 0;
+      font-size: 19px;
+      color: #cfdae6;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn-gold {
+      background: #d6aa25;
+      color: #10213a;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.45);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* GENERAL */
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    .section-label {
+      color: #b78a07;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 34px;
+      line-height: 1.2;
+      color: #10213a;
+    }
+
+    .section-lead {
+      max-width: 880px;
+      margin: 0;
+      font-size: 18px;
+      color: #536275;
+    }
+
+    /* STATS */
+
+    .stats {
+      max-width: 1120px;
+      margin: -26px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats-grid {
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(10,30,55,.12);
+    }
+
+    .stat {
+      text-align: center;
+      padding: 28px 15px;
+      border-right: 1px solid #e5e9ee;
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: #c99a16;
+      font-size: 31px;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: #596779;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    /* PROFILE */
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.45fr .8fr;
+      gap: 50px;
+    }
+
+    .profile-copy p {
+      margin-top: 0;
+      font-size: 18px;
+      color: #4e5d6f;
+    }
+
+    .profile-box {
+      background: #10213a;
+      color: white;
+      padding: 32px;
+      border-radius: 10px;
+    }
+
+    .profile-box h3 {
+      color: #d6aa25;
+      margin-top: 0;
+    }
+
+    .profile-box p {
+      color: #d4dde8;
+    }
+
+    /* LETTER */
+
+    .letter {
+      background: #e9edf2;
+    }
+
+    .letter-box {
+      background: white;
+      border-left: 5px solid #d6aa25;
+      padding: 38px 42px;
+      box-shadow: 0 8px 25px rgba(20,40,65,.06);
+    }
+
+    .letter-box p {
+      font-size: 17px;
+      color: #48586b;
+    }
+
+    /* DOCUMENTS */
+
+    .documents {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .document {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      border-top: 4px solid #d6aa25;
+      box-shadow: 0 8px 24px rgba(20,40,65,.08);
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+    }
+
+    .document-number {
+      color: #b58705;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .document h3 {
+      margin: 12px 0;
+      font-size: 23px;
+    }
+
+    .document p {
+      color: #586779;
+      flex-grow: 1;
+    }
+
+    .document a {
+      margin-top: 18px;
+      color: #17385e;
+      font-weight: 700;
+    }
+
+    /* GOVERNANCE */
+
+    .governance {
+      background: #10213a;
+      color: white;
+    }
+
+    .governance .section-title {
+      color: white;
+    }
+
+    .governance .section-lead {
+      color: #ccd5e0;
+    }
+
+    .gov-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.4fr;
+      gap: 45px;
+      margin-top: 38px;
+    }
+
+    .gov-highlight {
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 30px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .gov-highlight strong {
+      color: #d6aa25;
+    }
+
+    .credentials {
+      display: grid;
+      gap: 12px;
+    }
+
+    .credential {
+      background: white;
+      color: #14243b;
+      padding: 17px 20px;
+      border-radius: 7px;
+      border-left: 3px solid #d6aa25;
+    }
+
+    .credential strong {
+      display: block;
+    }
+
+    .credential span {
+      color: #667385;
+      font-size: 14px;
+    }
+
+    /* NOTE */
+
+    .note-box {
+      background: #f0f3f6;
+      border-radius: 12px;
+      padding: 35px;
+      border-top: 5px solid #d6aa25;
+    }
+
+    .note-box h3 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .note-box p {
+      color: #586779;
+    }
+
+    /* CV */
+
+    .cv {
+      background: white;
+      padding: 36px;
+      box-shadow: 0 8px 25px rgba(20,40,65,.08);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .cv h3 {
+      margin: 0 0 5px;
+      font-size: 25px;
+    }
+
+    .cv p {
+      margin: 0;
+      color: #637083;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #071426;
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact .section-lead {
+      margin: auto;
+      color: #ccd5e0;
+    }
+
+    .contact-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      background: #050f1d;
+      color: #9ba8b8;
+      text-align: center;
+      padding: 27px 20px;
+      font-size: 14px;
+    }
+
+    @media(max-width:850px) {
+
+      .hero {
+        padding: 55px 22px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      .stats-grid,
+      .profile-grid,
+      .documents,
+      .gov-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid #e5e9ee;
+      }
+
+      .container {
+        padding: 52px 22px;
+      }
+
+      .letter-box {
+        padding: 28px 25px;
+      }
+
+      .cv {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Portfolio ejecutivo · AMETEL · 2026
+    </div>
+
+    <h1>
+      Gustavo Fuentes Aguilar
+    </h1>
+
+    <h2>
+      Dirección · Estrategia · Transformación · Gobernanza de IA
+    </h2>
+
+    <p>
+      Más de 25 años de experiencia en dirección, finanzas,
+      transformación y gestión de organizaciones. Este espacio reúne
+      tres trabajos desarrollados sobre AMETEL desde una misma lógica:
+      comprender primero el negocio, identificar oportunidades reales
+      y aplicar después tecnología, gobernanza y criterio empresarial.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-gold"
+         href="#trabajos">
+        Ver trabajos AMETEL
+      </a>
+
+      <a class="btn btn-outline"
+         href="5-CV_Gustavo_Fuentes_Aguilar_v2.pdf"
+         target="_blank">
+        Ver CV
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- STATS -->
+
+<section class="stats">
+
+  <div class="stats-grid">
+
+    <div class="stat">
+      <strong>+25</strong>
+      <span>Años en dirección</span>
+    </div>
+
+    <div class="stat">
+      <strong>+1.500</strong>
+      <span>Profesionales liderados</span>
+    </div>
+
+    <div class="stat">
+      <strong>P&L</strong>
+      <span>Dirección y resultados</span>
+    </div>
+
+    <div class="stat">
+      <strong>MIT</strong>
+      <span>IA aplicada · 2025</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROFILE -->
+
+<section class="container">
+
+  <div class="profile-grid">
+
+    <div class="profile-copy">
+
+      <div class="section-label">
+        Perfil ejecutivo
+      </div>
+
+      <h2 class="section-title">
+        Primero negocio. Después tecnología.
+      </h2>
+
+      <p>
+        Mi trayectoria profesional combina dirección general,
+        gestión financiera, cuenta de resultados, liderazgo de equipos,
+        innovación y transformación empresarial.
+      </p>
+
+      <p>
+        He trabajado en compañías como Endesa, Ericsson, Lavinia,
+        La Claqueta y Grupo ADM, pasando del análisis de inversiones
+        y el control económico a la dirección integral de organizaciones.
+      </p>
+
+      <p>
+        Esa experiencia es la base desde la que hoy incorporo
+        una nueva especialización: el gobierno corporativo
+        y la aplicación empresarial de la inteligencia artificial.
+      </p>
+
+    </div>
+
+    <aside class="profile-box">
+
+      <h3>
+        Mi enfoque
+      </h3>
+
+      <p>
+        No parto de preguntarme qué puede hacer la IA.
+      </p>
+
+      <p>
+        Parto de preguntarme:
+        <strong>¿qué problema empresarial merece ser resuelto?</strong>
+      </p>
+
+    </aside>
+
+  </div>
+
+</section>
+
+<!-- INTENT -->
+
+<section class="letter">
+
+  <div class="container">
+
+    <div class="section-label">
+      Por qué comparto estos trabajos
+    </div>
+
+    <h2 class="section-title">
+      Tres documentos, una misma intención
+    </h2>
+
+    <div class="letter-box">
+
+      <p>
+        Estos trabajos no pretenden explicar AMETEL desde fuera,
+        sino mostrar una forma de analizar una compañía industrial
+        desde la estrategia, la tecnología y el riesgo.
+      </p>
+
+      <p>
+        El primero plantea una lectura ejecutiva para Consejo.
+        El segundo propone un modelo mínimo de gobernanza de IA.
+        El tercero explora una aplicación concreta de innovación:
+        la robótica aplicada a trabajos en tensión.
+      </p>
+
+      <p>
+        Los tres parten del mismo principio:
+        <strong>la tecnología solo genera ventaja cuando está conectada
+        con una necesidad real de negocio, una responsabilidad clara
+        y resultados medibles.</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- NOTE -->
+
+<section class="container">
+
+  <div class="note-box">
+
+    <div class="section-label">
+      Lectura rápida
+    </div>
+
+    <h3>
+      Nota de acompañamiento
+    </h3>
+
+    <p>
+      Si quieres entender el conjunto antes de entrar en los documentos
+      técnicos, esta nota resume el propósito de los tres trabajos
+      y cómo se relacionan entre sí.
+    </p>
+
+    <a class="btn btn-gold"
+       href="1-Ametel_Nota_Tres_Documentos.pdf"
+       target="_blank">
+      Abrir nota
+    </a>
+
+  </div>
+
+</section>
+
+<!-- DOCUMENTS -->
+
+<section class="container"
+         id="trabajos">
+
+  <div class="section-label">
+    Trabajo aplicado · AMETEL
+  </div>
+
+  <h2 class="section-title">
+    Estrategia, gobernanza e innovación operacional
+  </h2>
+
+  <p class="section-lead">
+    Tres perspectivas complementarias para abordar
+    transformación tecnológica con criterio empresarial.
+  </p>
+
+  <div class="documents">
+
+    <article class="document">
+
+      <div class="document-number">
+        Documento 01 · Consejo
+      </div>
+
+      <h3>
+        Informe para Consejo
+      </h3>
+
+      <p>
+        Lectura ejecutiva de AMETEL orientada a identificar
+        capacidades, oportunidades y decisiones relevantes
+        para crecimiento, transformación y creación de valor.
+      </p>
+
+      <a href="2-Ametel_Informe_Consejo.pdf"
+         target="_blank">
+        Abrir informe →
+      </a>
+
+    </article>
+
+    <article class="document">
+
+      <div class="document-number">
+        Documento 02 · Gobernanza
+      </div>
+
+      <h3>
+        Playbook mínimo de gobernanza de IA
+      </h3>
+
+      <p>
+        Un modelo práctico para pasar de iniciativas aisladas
+        a una cartera gobernada: responsables claros,
+        clasificación de riesgo, controles, métricas
+        y supervisión empresarial.
+      </p>
+
+      <a href="3-Ametel_Playbook_Minimo_Gobernanza_IA.pdf"
+         target="_blank">
+        Abrir Playbook →
+      </a>
+
+    </article>
+
+    <article class="document">
+
+      <div class="document-number">
+        Documento 03 · Innovación
+      </div>
+
+      <h3>
+        Robótica aplicada a trabajos en tensión
+      </h3>
+
+      <p>
+        Exploración de cómo robótica, automatización
+        e inteligencia artificial pueden reducir exposición humana,
+        reforzar seguridad y abrir nuevas capacidades operativas.
+      </p>
+
+      <a href="4-Ametel_Robotica_Trabajos_en_Tension.pdf"
+         target="_blank">
+        Abrir documento →
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- GOVERNANCE -->
+
+<section class="governance">
+
+  <div class="container">
+
+    <div class="section-label">
+      Especialización actual
+    </div>
+
+    <h2 class="section-title">
+      Gobernanza de inteligencia artificial
+    </h2>
+
+    <p class="section-lead">
+      La IA no sustituye mi trayectoria directiva.
+      La amplía con una nueva capacidad para ayudar a órganos
+      de administración a decidir, supervisar y exigir evidencia.
+    </p>
+
+    <div class="gov-grid">
+
+      <div class="gov-highlight">
+
+        <p>
+          <strong>
+            No aporto opinión sobre IA.
+          </strong>
+        </p>
+
+        <p>
+          Aporto método para que un Consejo pueda gobernarla,
+          convertirla en valor y exigir evidencia de que
+          sus riesgos están bajo control.
+        </p>
+
+        <p>
+          Esa lógica se articula también en el
+          <strong>ABGF · AI Board Governance Framework</strong>.
+        </p>
+
+      </div>
+
+      <div class="credentials">
+
+        <div class="credential">
+          <strong>Programa de IA Aplicada</strong>
+          <span>MIT · completado · 2025</span>
+        </div>
+
+        <div class="credential">
+          <strong>AIGP · AI Governance Professional</strong>
+          <span>IAPP · itinerario 2026</span>
+        </div>
+
+        <div class="credential">
+          <strong>ISO/IEC 42001</strong>
+          <span>Lead Implementer / Lead Auditor · itinerario</span>
+        </div>
+
+        <div class="credential">
+          <strong>NIST AI RMF</strong>
+          <span>Especialización en gestión de riesgo de IA</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CV -->
+
+<section class="container">
+
+  <div class="cv">
+
+    <div>
+
+      <h3>
+        Currículum profesional completo
+      </h3>
+
+      <p>
+        Dirección general, finanzas, transformación,
+        liderazgo institucional y especialización en gobernanza de IA.
+      </p>
+
+    </div>
+
+    <a class="btn btn-gold"
+       href="5-CV_Gustavo_Fuentes_Aguilar_v2.pdf"
+       target="_blank">
+      Abrir CV
+    </a>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      Cierre
+    </div>
+
+    <h2 class="section-title">
+      Transformación con criterio empresarial
+    </h2>
+
+    <p class="section-lead">
+      Estrategia, ejecución, tecnología y gobernanza
+      conectadas con una misma pregunta:
+      dónde puede crearse valor real y cómo hacerlo bajo control.
+    </p>
+
+    <div class="contact-actions">
+
+      <a class="btn btn-gold"
+         href="5-CV_Gustavo_Fuentes_Aguilar_v2.pdf"
+         target="_blank">
+        Ver CV
+      </a>
+
+      <a class="btn btn-outline"
+         href="https://linkedin.com/in/gustavo-fuentes-aguilar"
+         target="_blank">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  Gustavo Fuentes Aguilar · AMETEL · Portfolio ejecutivo · 2026
+</footer>
+
+</body>
+</html>
